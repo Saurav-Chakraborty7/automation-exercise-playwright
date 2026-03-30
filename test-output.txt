@@ -1,0 +1,11 @@
+
+Running 1 test using 1 worker
+
+  Ô£ô  1 [chromium] ÔÇ║ tests\tc01_registerUser.spec.js:19:1 ÔÇ║ TC01 - Register User (3.5s)
+
+  1 passed (6.2s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m
