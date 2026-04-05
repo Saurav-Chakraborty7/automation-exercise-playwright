@@ -15,11 +15,17 @@
 
 const { test } = require('@playwright/test');
 const { HomeActions } = require('../pages/actions/HomeActions');
+const { SignupActions } = require('../pages/actions/SignupActions');
 
 test('TC01 - Register User', async ({ page }) => {
     const home = new HomeActions(page);
+    const signup = new SignupActions(page);
 
     // Step 1-2: Open home page and verify it loaded
     await home.goto();
     await home.verifyHomePageIsVisible();
+
+    // Step 3-4: Go to Signup/Login and verify signup section
+    await home.clickSignupLogin();
+    await signup.verifySignupPageIsVisible();
 });
