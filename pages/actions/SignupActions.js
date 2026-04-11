@@ -14,6 +14,16 @@ class SignupActions {
     async verifySignupPageIsVisible() {
         await expect(this.loc.signupHeading).toBeVisible();
     }
+
+    async enterNameAndEmail(name, email) {
+        await this.loc.nameInput.fill(name);
+        await this.loc.emailInput.fill(email);
+        await this.loc.signupButton.click();
+    }
+
+    async verifyAccountInfoFormIsVisible() {
+        await expect(this.loc.accountInfoHeading).toBeVisible();
+    }
 }
 
 module.exports = { SignupActions };
