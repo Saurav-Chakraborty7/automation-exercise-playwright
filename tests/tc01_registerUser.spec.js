@@ -22,6 +22,7 @@ test('TC01 - Register User', async ({ page }) => {
     const home = new HomeActions(page);
     const signup = new SignupActions(page);
 
+
     // Step 1-2: Open home page and verify it loaded
     await home.goto();
     await home.verifyHomePageIsVisible();
@@ -35,4 +36,15 @@ test('TC01 - Register User', async ({ page }) => {
 
     // Step 6: Verify account info form appeared
     await signup.verifyAccountInfoFormIsVisible();
+
+    // Step 7: Fill account info (gender, password, DOB)
+    await signup.fillAccountInfoForm(
+        userData.password,
+        userData.day,
+        userData.month,
+        userData.year
+    );
+
+    // Step 8: Fill address form and click Create Account
+    await signup.fillAddressForm(userData);
 });

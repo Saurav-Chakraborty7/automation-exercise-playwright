@@ -24,6 +24,28 @@ class SignupActions {
     async verifyAccountInfoFormIsVisible() {
         await expect(this.loc.accountInfoHeading).toBeVisible();
     }
+
+    async fillAccountInfoForm(password, day, month, year) {
+        await this.loc.genderMr.check();
+        await this.loc.passwordInput.fill(password);
+        await this.loc.dayDropdown.selectOption(day);
+        await this.loc.monthDropdown.selectOption(month);
+        await this.loc.yearDropdown.selectOption(year);
+    }
+
+    async fillAddressForm(user) {
+        await this.loc.firstNameInput.fill(user.firstName);
+        await this.loc.lastNameInput.fill(user.lastName);
+        await this.loc.companyInput.fill(user.company);
+        await this.loc.address1Input.fill(user.address1);
+        await this.loc.address2Input.fill(user.address2);
+        await this.loc.countryDropdown.selectOption(user.country);
+        await this.loc.stateInput.fill(user.state);
+        await this.loc.cityInput.fill(user.city);
+        await this.loc.zipcodeInput.fill(user.zipcode);
+        await this.loc.mobileInput.fill(user.mobileNumber);
+        await this.loc.createAccountBtn.click();
+    }
 }
 
 module.exports = { SignupActions };
