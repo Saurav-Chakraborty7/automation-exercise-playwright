@@ -46,6 +46,14 @@ class SignupActions {
         await this.loc.mobileInput.fill(user.mobileNumber);
         await this.loc.createAccountBtn.click();
     }
+
+    async verifyAccountCreated() {
+        await expect(this.loc.accountCreatedText).toBeVisible();
+    }
+
+    async clickContinue() {
+        await this.loc.continueButton.click();
+    }
 }
 
 module.exports = { SignupActions };

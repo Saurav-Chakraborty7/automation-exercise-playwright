@@ -47,4 +47,8 @@ test('TC01 - Register User', async ({ page }) => {
 
     // Step 8: Fill address form and click Create Account
     await signup.fillAddressForm(userData);
+
+    // Step 9: Verify account created and click Continue
+    await signup.verifyAccountCreated();
+    await signup.clickContinue();
 });

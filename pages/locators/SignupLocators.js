@@ -29,5 +29,9 @@ class SignupLocators {
     get zipcodeInput() { return this.page.locator('[data-qa="zipcode"]'); }
     get mobileInput() { return this.page.locator('[data-qa="mobile_number"]'); }
     get createAccountBtn() { return this.page.locator('[data-qa="create-account"]'); }
+
+    // Step 4 — Account Created confirmation
+    get accountCreatedText() { return this.page.getByText('Account Created!'); }
+    get continueButton() { return this.page.locator('[data-qa="continue-button"]'); }
 }
 module.exports = { SignupLocators };
