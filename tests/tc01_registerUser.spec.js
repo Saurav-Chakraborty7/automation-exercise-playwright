@@ -51,4 +51,7 @@ test('TC01 - Register User', async ({ page }) => {
     // Step 9: Verify account created and click Continue
     await signup.verifyAccountCreated();
     await signup.clickContinue();
+
+    // Step 10: Verify user is logged in
+    await home.verifyLoggedInAs(userData.name);
 });
