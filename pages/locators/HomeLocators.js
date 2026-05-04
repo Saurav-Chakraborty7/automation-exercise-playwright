@@ -19,5 +19,9 @@ class HomeLocators {
         return this.page.locator('a:has-text("Logged in as")');
     }
 
+    get accountDeletedText() {
+        return this.page.getByText('Account Deleted!');
+    }
+
 }
 module.exports = { HomeLocators };

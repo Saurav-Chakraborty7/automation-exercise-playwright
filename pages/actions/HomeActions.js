@@ -25,6 +25,10 @@ class HomeActions {
         await expect(this.loc.loggedInAsText).toContainText(name);
     }
 
+    async verifyAccountDeleted() {
+        await expect(this.loc.accountDeletedText).toBeVisible();
+    }
+
 
 }
 module.exports = { HomeActions };

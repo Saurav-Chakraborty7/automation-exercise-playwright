@@ -54,4 +54,10 @@ test('TC01 - Register User', async ({ page }) => {
 
     // Step 10: Verify user is logged in
     await home.verifyLoggedInAs(userData.name);
+
+    // Step 11: Click 'Delete Account'
+    await home.clickDeleteAccount();
+
+    // Step 12: Verify 'Account Deleted!' is visible
+    await home.verifyAccountDeleted();
 });
